@@ -7,7 +7,13 @@
 <body>
     <div class="content">
         {% include "partials/nav.html" %}
-
+        <div class="socials">
+            {% for social in config.extra.socials %}
+            <a rel="me" href="{{ social.url }}" class="social">
+                <img alt={{ social.name }} src="/social_icons/{{ social.icon }}.svg">
+            </a>
+            {% endfor %}
+        </div>
         {# Post page is the default #}
         {% block main_content %}
             Nothing here?!
